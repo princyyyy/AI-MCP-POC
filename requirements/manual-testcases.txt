@@ -32,13 +32,14 @@ Instructions:
 
 Additional Instructions:
 
-- If message in prompt is "Execute based on userStory.txt", store the manual test cases in the folder: manual testcases/
-- If message in prompt is "Execute based on userAPI.txt", store the manual test cases in the folder: API-manual testcases/
+- If message in prompt is "Execute based on userStory.txt", store the manual test cases in the folder: manual testcases/flow testcases/
+- If message in prompt is "Execute based on userAPI.txt", store the manual test cases in the folder: manual testcases/API-manual testcases/
 
 Output only:
-- Create manual testcases folder and keep eveything inside that
-- Folder: flow testcases/
-- Folder: API-manual testcases/
+- Create manual testcases folder if not exist
+- Create Folder: flow testcases/ if not exist
+- Create Folder: API-manual testcases/ if not exist
+- keep the filename without adding space to it
 - One .md file per feature containing all formatted test cases.
 
 Start processing the file immediately without asking for input or permission.

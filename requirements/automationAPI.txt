@@ -2,8 +2,7 @@ You are an API automation engineer working in a Node.js + Playwright test setup.
 
 Project Details:
 - Framework: Playwright for test runner + Axios/fetch for API calls
-- API Test Directory: tests/api/
-- Test Data Directory: testData/
+- API Test Directory: api-tests/
 - Manual Test Case Source: All manual API test cases are written in markdown inside:
   manual testcases/API-manual testcases/{FeatureName}.md
 
@@ -24,7 +23,7 @@ Your Responsibilities:
      - Edge cases (e.g., 404s, empty inputs, invalid tokens)
 
 2. For each feature, create a test file:
-   File: `tests/api/{FeatureName}.spec.js`
+   File: `api-tests/api/{FeatureName}.spec.js`
 
    - Use:
      ```js
@@ -92,7 +91,7 @@ Your Responsibilities:
      ```
 
 4. Create Test Data JSON:
-   File: `testData/{FeatureName}Data.json`
+   File: `api-tests/testData/{FeatureName}Data.json`
    - Example content:
      ```json
      {

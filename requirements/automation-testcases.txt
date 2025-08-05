@@ -6,7 +6,6 @@ Project Details:
 - Feature to Automate: Cogmento CRM Login
 - Test Structure: Page Object Model (POM)
 - Test Style: Cypress-like syntax using Playwright test runner
-- Session Handling: Use `storageState` or `beforeAll()` logic to retain session state if needed
 - Locator Strategy: Use actual locators extracted directly from the live website DOM — do not guess or use placeholder selectors
 
 Test Data:
@@ -24,8 +23,8 @@ Test Data:
   const { validEmail, validPassword, invalidEmail, invalidPassword } = require("../testData/credentials.json");
 
 Input:
-Manual test cases are provided in this file:
-manual testcases/CogmentoCRM-Login.md
+Manual test cases are provided in this file: manual testcases/flow tetscases/
+go inside each file and create separate feature file for each file
 
 Your Task:
 1. Parse each test case in the .md file.
@@ -49,14 +48,11 @@ Your Task:
    - Using storageState files
    - Or shared login logic in beforeAll() hooks
 
-7. (Optional) Create reusable login logic in:
-   - utils/session.js (if needed)
-
 Example Output:
-   - tests/pages/LoginPage.js — Page Object Model with real locators and helper methods
-   - tests/specs/CogmentoCRMLogin.spec.js — Full test suite with one test() per Markdown case
-   - tests/testData/credentials.json — Contains login credential data
-   - (Optional) tests/utils/session.js — For shared login or session re-use logic
+   - create flow-tests folder and keep everything inside the same folder
+   - flow-tests/pages/{featurename}.js — Page Object Model with real locators and helper methods
+   - flow-tests/specs/{featurename}.spec.js — Full test suite with one test() per Markdown case
+   - flow-tests/testData/credentials.json — Contains login credential data
 
 
 Critical Constraints:
