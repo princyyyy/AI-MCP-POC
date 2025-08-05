@@ -1,0 +1,34 @@
+Feature: Cogmento CRM Login Functionality
+
+User Story: Login to Cogmento CRM
+
+As a registered user of the Cogmento CRM system,
+I want to log in by entering my valid email and password,
+So that I can securely access the CRM dashboard to manage contacts, companies, deals, and other resources.
+
+Screen Fields (Login Page):
+- Email (text field)
+- Password (password field)
+- Login (button)
+- Forgot your password? (link)
+- Sign Up (link)
+- Error Message Display Area (for failed login attempts)
+
+Functionality:
+
+1. Successful Login:
+   - When valid credentials are entered and the Login button is clicked:
+     - The user should be redirected to the CRM dashboard (https://ui.cogmento.com/home).
+     - No error messages should be displayed.
+     - The session should persist unless manually logged out.
+
+2. Failed Login:
+   - If either the email or password is incorrect or fields are left blank:
+     - An error message such as "Something went wrong..." is displayed in a red alert box.
+     - The user remains on the login page (https://ui.cogmento.com/).
+
+3. Input Validation:
+   - Both Email and Password fields are required before submission.
+   - Leading and trailing whitespaces should be trimmed before validation.
+   - The Login button remains functional even if fields are blank, but submission results in an error.
+   - Invalid formats (e.g., incorrect email format) do not show frontend validation but will fail login silently with an error.

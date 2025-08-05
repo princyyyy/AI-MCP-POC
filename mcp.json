@@ -1,0 +1,10 @@
+{
+  "serverPort": 8099,
+  "projects": [
+    {
+      "name": "Playwright Tests",
+      "testDir": "./cypress/tests",
+      "platforms": ["chromium", "firefox", "webkit"]
+    }
+  ]
+}

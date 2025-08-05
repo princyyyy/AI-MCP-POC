@@ -1,0 +1,77 @@
+{
+  "cookies": [
+    {
+      "name": "__cf_bm",
+      "value": "bssi72C3F3aYzboCMLbDT0a_UVqNIuOczCfc_SIygJE-1754401704-1.0.1.1-tSnOpVVgSd4WPCUoE9KYM4d1QKPtM4XCqB0GVPYIrVF8I20WwmVkZUJWT81VMBGQWyzWrxREYioMUSDgn0n7FbGZ0OUD21Q9jm0tTfC3Mj8",
+      "domain": ".onesignal.com",
+      "path": "/",
+      "expires": 1754403504.103214,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "token",
+      "value": "12cd0b831dcc5ab09ce7434ed564b99abbab6721",
+      "domain": "ui.cogmento.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "NID",
+      "value": "525=VoSHgRkH4XkoB9WswA6a0S8xaHuh2MBiSmCwrFmuHiz2H7rAg50I12Ws4CFhBE5y1OjTkPMD9Zt9bn1H1DqSsBWjrFPlDJwAssQbGR_uMMrIohaA0HxDowUf7DGeuvxlRsBjwcSLZi4_lKMhf_AH8S7Ya6pOnYxTO3zj2oIenMABLpHmoZu_hVLVLscCVSn_fQ",
+      "domain": ".google.com",
+      "path": "/",
+      "expires": 1770212908.49335,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://ui.cogmento.com",
+      "localStorage": [
+        {
+          "name": "ZD-suid",
+          "value": "{\"id\":\"70132f2f9a4a4156b4e0018de76b6f37\",\"expiry\":1754402604406,\"tabs\":{\"count\":1,\"expiry\":0}}"
+        },
+        {
+          "name": "isPushNotificationsEnabled",
+          "value": "false"
+        },
+        {
+          "name": "token",
+          "value": "12cd0b831dcc5ab09ce7434ed564b99abbab6721"
+        },
+        {
+          "name": "api_url",
+          "value": "https://api.cogmento.com/api/1/"
+        },
+        {
+          "name": "isOptedOut",
+          "value": "false"
+        },
+        {
+          "name": "os_pageViews",
+          "value": "1"
+        },
+        {
+          "name": "ZD-buid",
+          "value": "d8ee4dd365bb4de2941e3c30552f6c29"
+        },
+        {
+          "name": "650e1060345743d961bcbae6.clientId",
+          "value": "d8ee4dd365bb4de2941e3c30552f6c29"
+        },
+        {
+          "name": "version",
+          "value": "1.1.28"
+        }
+      ]
+    }
+  ]
+}

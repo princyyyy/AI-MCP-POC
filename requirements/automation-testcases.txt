@@ -1,0 +1,69 @@
+You are a Playwright automation engineer.
+
+Project Details:
+- Framework: Playwright (JavaScript)
+- Website Under Test: https://ui.cogmento.com/
+- Feature to Automate: Cogmento CRM Login
+- Test Structure: Page Object Model (POM)
+- Test Style: Cypress-like syntax using Playwright test runner
+- Session Handling: Use `storageState` or `beforeAll()` logic to retain session state if needed
+- Locator Strategy: Use actual locators extracted directly from the live website DOM — do not guess or use placeholder selectors
+
+Test Data:
+- Store all test credentials in a separate JSON file:
+  testData/credentials.json
+  Example content:
+  {
+    "validEmail": "princyanghan77@gmail.com",
+    "validPassword": "Simform@123",
+    "invalidEmail": "invalid@example.com",
+    "invalidPassword": "wrongpassword"
+  }
+
+- In the test file (tests/CogmentoCRMLogin.spec.js), load these credentials using:
+  const { validEmail, validPassword, invalidEmail, invalidPassword } = require("../testData/credentials.json");
+
+Input:
+Manual test cases are provided in this file:
+manual testcases/CogmentoCRM-Login.md
+
+Your Task:
+1. Parse each test case in the .md file.
+2. Visit the live Cogmento CRM login page (https://ui.cogmento.com/).
+3. Extract real selectors using page.locator() or DevTools.
+4. Build the Page Object Model:
+   - pages/LoginPage.js
+   - Include only working locators
+   - Define methods like:
+     - login(email, password)
+     - getErrorMessage()
+     - dashboardHeader locator
+
+5. Create the test suite:
+   - tests/CogmentoCRMLogin.spec.js
+   - Each manual test case must be mapped 1:1 to a test() block using the title from the .md file
+   - Import credentials from testData/credentials.json
+   - No test should rely on hardcoded credentials or guessed selectors
+
+6. Implement session persistence (if needed):
+   - Using storageState files
+   - Or shared login logic in beforeAll() hooks
+
+7. (Optional) Create reusable login logic in:
+   - utils/session.js (if needed)
+
+Expected Output:
+- pages/LoginPage.js — Page Object Model with real locators and helper methods
+- tests/CogmentoCRMLogin.spec.js — Full test suite with one test() per Markdown case
+- testData/credentials.json — Contains login credential data
+- (Optional) utils/session.js — For shared login or session re-use logic
+
+Critical Constraints:
+- DO NOT use placeholder selectors
+- DO NOT hardcode credentials inside tests
+- DO NOT skip any test case from .md
+- DO NOT output incomplete or commented-out code
+- Output must be production-ready and fully executable
+
+Goal:
+Produce a robust, real-world Playwright test suite that automates Cogmento CRM login functionality using real UI locators, externalized credential data, and well-structured Page Object Model.

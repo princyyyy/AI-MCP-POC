@@ -1,0 +1,7 @@
+{
+  "playwrightMCP": {
+    "port": 8099,
+    "specFolder": "tests", // Replace with the folder containing your tests
+    "command": "npx playwright test"
+  }
+}
