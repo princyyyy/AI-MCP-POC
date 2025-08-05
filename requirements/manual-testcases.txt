@@ -1,8 +1,6 @@
-You are to automatically process the contents of the file userStory.txt and generate structured manual test cases based on its user stories.
-
 Instructions:
 
-1. Read the Requirement.txt file and extract all user stories.
+1. Read the file.txt file given in prompt and extract all user stories.
 2. For each user story:
    - Identify the related feature name from the story content.
    - Generate at least 10 detailed manual test cases.
@@ -13,7 +11,7 @@ Instructions:
 **Precondition:** {Precondition}  
 
 **Test Steps:**
-1. Step 1
+1. Step 1  
 2. Step 2  
 ...
 
@@ -29,11 +27,18 @@ Instructions:
 ---
 
 4. For each unique feature, create a .md file named after the feature.
-5. Save each .md file in a folder named manual testcases.
+5. Save each .md file in the appropriate folder.
 6. Each file should contain all test cases related to that feature.
 
+Additional Instructions:
+
+- If message in prompt is "Execute based on userStory.txt", store the manual test cases in the folder: manual testcases/
+- If message in prompt is "Execute based on userAPI.txt", store the manual test cases in the folder: API-manual testcases/
+
 Output only:
-- Folder: manual testcases
+- Create manual testcases folder and keep eveything inside that
+- Folder: flow testcases/
+- Folder: API-manual testcases/
 - One .md file per feature containing all formatted test cases.
 
-Start processing userStory.txt immediately without asking for input or permission.
+Start processing the file immediately without asking for input or permission.

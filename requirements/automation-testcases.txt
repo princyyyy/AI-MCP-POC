@@ -52,11 +52,12 @@ Your Task:
 7. (Optional) Create reusable login logic in:
    - utils/session.js (if needed)
 
-Expected Output:
-- pages/LoginPage.js — Page Object Model with real locators and helper methods
-- tests/CogmentoCRMLogin.spec.js — Full test suite with one test() per Markdown case
-- testData/credentials.json — Contains login credential data
-- (Optional) utils/session.js — For shared login or session re-use logic
+Example Output:
+   - tests/pages/LoginPage.js — Page Object Model with real locators and helper methods
+   - tests/specs/CogmentoCRMLogin.spec.js — Full test suite with one test() per Markdown case
+   - tests/testData/credentials.json — Contains login credential data
+   - (Optional) tests/utils/session.js — For shared login or session re-use logic
+
 
 Critical Constraints:
 - DO NOT use placeholder selectors
