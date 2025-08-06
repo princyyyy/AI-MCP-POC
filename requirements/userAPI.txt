@@ -1,4 +1,4 @@
-Feature: Get and Delete User Details via Reqres API
+Feature: Get User Details via Reqres API
 
 User Story 1: Retrieve user information by ID
 
@@ -20,29 +20,6 @@ Functional Requirements:
   - avatar
 - Invalid IDs (e.g., 0, negative numbers, very large numbers) should return proper error responses.
 - The API should handle invalid input formats (e.g., non-numeric values like "abc") gracefully.
-- Response time should be under 2 seconds.
-- Authentication is not required.
-
-Test Data Examples:
-- Valid ID: 2
-- Invalid ID: 999
-- Edge Cases: 0, -1, 1000000000, "abc"
-
-
-User Story 2: Delete a user by ID
-
-As a client of the Reqres API,  
-I want to delete a user by providing a valid user ID,  
-So that I can manage user data and remove inactive users from the system.
-
-API Endpoint: https://reqres.in/api/users/{id}  
-Method: DELETE
-
-Functional Requirements:
-- When a valid user ID is provided, the API returns status code 204 No Content, indicating successful deletion.
-- If the user ID does not exist, the API still returns a 204 (as per Reqres behavior, which simulates deletion without actual data).
-- Deleting with invalid input (e.g., non-numeric values, 0, negative numbers) should not cause server errors.
-- No response body is expected for successful deletion.
 - Response time should be under 2 seconds.
 - Authentication is not required.
 

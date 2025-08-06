@@ -2,65 +2,78 @@ You are a Playwright automation engineer.
 
 Project Details:
 - Framework: Playwright (JavaScript)
+- Test Style: Cypress-like syntax using Playwright Test Runner
 - Website Under Test: https://ui.cogmento.com/
 - Feature to Automate: Cogmento CRM Login
-- Test Structure: Page Object Model (POM)
-- Test Style: Cypress-like syntax using Playwright test runner
-- Locator Strategy: Use actual locators extracted directly from the live website DOM — do not guess or use placeholder selectors
+- Design Pattern: Page Object Model (POM)
+- Locator Strategy: Use ONLY real selectors extracted directly from the live DOM via Playwright DevTools or page.locator(). Do NOT use placeholder selectors or guess the DOM structure.
 
 Test Data:
-- Store all test credentials in a separate JSON file:
-  testData/credentials.json
-  Example content:
-  {
-    "validEmail": "princyanghan77@gmail.com",
-    "validPassword": "Simform@123",
-    "invalidEmail": "invalid@example.com",
-    "invalidPassword": "wrongpassword"
-  }
+All login credentials must be stored in a separate JSON file.
 
-- In the test file (tests/CogmentoCRMLogin.spec.js), load these credentials using:
-  const { validEmail, validPassword, invalidEmail, invalidPassword } = require("../testData/credentials.json");
+File path: flow-tests/testData/credentials.json
+
+Example content:
+{
+  "validEmail": "princyanghan77@gmail.com",
+  "validPassword": "Simform@123",
+  "invalidEmail": "invalid@example.com",
+  "invalidPassword": "wrongpassword"
+}
+
+In test files, load credentials using:
+const { validEmail, validPassword, invalidEmail, invalidPassword } = require("../testData/credentials.json");
 
 Input:
-Manual test cases are provided in this file: manual testcases/flow tetscases/
-go inside each file and create separate feature file for each file
+Manual test cases are available inside this directory:
+manual testcases/flow testcases/
+Each .md file contains test case titles and steps written in Markdown format.
+Please automate all the testcases there inside the file with test case titles
 
 Your Task:
-1. Parse each test case in the .md file.
-2. Visit the live Cogmento CRM login page (https://ui.cogmento.com/).
-3. Extract real selectors using page.locator() or DevTools.
-4. Build the Page Object Model:
-   - pages/LoginPage.js
-   - Include only working locators
-   - Define methods like:
-     - login(email, password)
+1. Parse all .md files under manual testcases/flow testcases/
+   - Extract test case titles and corresponding steps
+
+2. Visit the live site: https://ui.cogmento.com/
+   - Inspect real DOM and extract working selectors using page.locator() or DevTools
+
+3. Create the Page Object Model in flow-tests/pages/LoginPage.js
+   - Define only working selectors and methods:
+     - async login(email, password)
      - getErrorMessage()
-     - dashboardHeader locator
+     - dashboardHeader (locator only)
 
-5. Create the test suite:
-   - tests/CogmentoCRMLogin.spec.js
-   - Each manual test case must be mapped 1:1 to a test() block using the title from the .md file
-   - Import credentials from testData/credentials.json
-   - No test should rely on hardcoded credentials or guessed selectors
+4. Create a test suite in: flow-tests/specs/CogmentoCRMLogin.spec.js
+   - One test() block per test case (1:1 mapping from .md files)
+   - Use Cypress-like syntax via Playwright Test Runner
+   - Import credentials from credentials.json (do not hardcode)
+   - Use beforeEach() or beforeAll() for shared setup if needed
 
-6. Implement session persistence (if needed):
-   - Using storageState files
-   - Or shared login logic in beforeAll() hooks
+5. (If session persistence is required) Use Playwright’s storageState feature to maintain login sessions between tests.
 
-Example Output:
-   - create flow-tests folder and keep everything inside the same folder
-   - flow-tests/pages/{featurename}.js — Page Object Model with real locators and helper methods
-   - flow-tests/specs/{featurename}.spec.js — Full test suite with one test() per Markdown case
-   - flow-tests/testData/credentials.json — Contains login credential data
+Output Directory Structure:
 
+flow-tests/
+├── pages/
+│   └── LoginPage.js               # Page Object Model
+├── specs/
+│   └── CogmentoCRMLogin.spec.js  # All tests mapped from markdown
+├── testData/
+│   └── credentials.json           # External login credentials
+├── manual testcases/
+│   └── flow testcases/           # Input .md test cases
+└── test-results/                 # Stores test execution reports and artifacts
 
 Critical Constraints:
-- DO NOT use placeholder selectors
-- DO NOT hardcode credentials inside tests
-- DO NOT skip any test case from .md
-- DO NOT output incomplete or commented-out code
-- Output must be production-ready and fully executable
+- DO NOT use placeholder selectors like #username or .btn
+- DO NOT hardcode credentials inside test files
+- DO NOT skip any test case from the markdown files
+- DO NOT write incomplete or commented-out code
+- Output must be clean, fully functional, and production-ready
 
 Goal:
-Produce a robust, real-world Playwright test suite that automates Cogmento CRM login functionality using real UI locators, externalized credential data, and well-structured Page Object Model.
+Produce a complete, executable, and real-world Playwright test suite that automates Cogmento CRM Login functionality with:
+- Accurate UI locators
+- Clean Page Object design
+- Credential reuse via external JSON
+- 1:1 test mapping to manual cases

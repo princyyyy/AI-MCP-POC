@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "test:api": "playwright test api-tests/",
+    "test:flow": "playwright test flow-tests/",
+    "test:api:report": "playwright test api-tests/ --reporter=html"
   },
   "keywords": [],
   "author": "",
