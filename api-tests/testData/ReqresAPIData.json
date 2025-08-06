@@ -1,0 +1,29 @@
+{
+  "validUserIds": [1, 2, 3, 4, 5, 6],
+  "primaryTestUserId": 2,
+  "invalidUserIds": {
+    "nonExistent": 999,
+    "veryLarge": 1000000000,
+    "zero": 0,
+    "negative": -1,
+    "nonNumeric": "abc"
+  },
+  "expectedResponseFields": [
+    "id",
+    "email", 
+    "first_name",
+    "last_name",
+    "avatar"
+  ],
+  "performanceThresholds": {
+    "responseTimeMs": 2000,
+    "testIterations": 5
+  },
+  "expectedContentType": "application/json",
+  "expectedStatusCodes": {
+    "success": 200,
+    "notFound": 404,
+    "badRequest": 400,
+    "unauthorized": 401
+  }
+}
